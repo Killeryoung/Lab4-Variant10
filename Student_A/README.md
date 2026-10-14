@@ -12,14 +12,3 @@
 ## Граничні умови
 
 `nullptr`, `n<=0`, некоректні індекси, недостатній `capacity` відхиляються. `dijkstra` відхиляє ваги `< -1`. Переповнення сум відстаней не допускається. Граф може бути незв'язним. Для `pathLength` перевіряються вершини й ребра шляху; для коректності матриці в цілому використовуйте `dijkstra`.
-
-## Збирання (Windows / MinGW + CMake)
-
-```powershell
-cmake -S . -B build -G "MinGW Makefiles"
-cmake --build build
-.\build\StaticTest.exe
-.\build\ImplicitSelfTest.exe
-```
-
-SDK для партнера: `SDK/include/GraphPaths.h`, `SDK/lib/libGraphPaths.dll.a` (MinGW import library; для MSVC це `.lib`), `SDK/bin/libGraphPaths.dll`, `SDK/README.md`. Бібліотеку збирати тим самим toolchain/архітектурою, що й клієнт. DLL має бути доступна під час запуску.
