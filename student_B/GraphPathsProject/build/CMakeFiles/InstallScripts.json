@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/HP/Desktop/GraphPathsProject/build/cmake_install.cmake",
+		"C:/Users/HP/Desktop/GraphPathsProject/build/GraphConnectivity/cmake_install.cmake",
+		"C:/Users/HP/Desktop/GraphPathsProject/build/App/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

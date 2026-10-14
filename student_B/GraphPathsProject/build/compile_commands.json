@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/HP/Desktop/GraphPathsProject/build/GraphConnectivity",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DGRAPHCONN_STATIC @CMakeFiles\\GraphConnectivity.dir\\includes_CXX.rsp -g -o CMakeFiles\\GraphConnectivity.dir\\src\\GraphConnectivity.cpp.obj -c C:\\Users\\HP\\Desktop\\GraphPathsProject\\GraphConnectivity\\src\\GraphConnectivity.cpp",
+  "file": "C:/Users/HP/Desktop/GraphPathsProject/GraphConnectivity/src/GraphConnectivity.cpp",
+  "output": "GraphConnectivity/CMakeFiles/GraphConnectivity.dir/src/GraphConnectivity.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/Desktop/GraphPathsProject/build/App",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DGRAPHCONN_STATIC @CMakeFiles\\MyApplication.dir\\includes_CXX.rsp -g -o CMakeFiles\\MyApplication.dir\\main.cpp.obj -c C:\\Users\\HP\\Desktop\\GraphPathsProject\\App\\main.cpp",
+  "file": "C:/Users/HP/Desktop/GraphPathsProject/App/main.cpp",
+  "output": "App/CMakeFiles/MyApplication.dir/main.cpp.obj"
+}
+]

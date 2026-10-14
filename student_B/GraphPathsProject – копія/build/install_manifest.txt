@@ -1,0 +1,4 @@
+/GraphConnectivity_SDK/lib/GraphConnectivity.lib
+/GraphConnectivity_SDK/bin/GraphConnectivity.dll
+/GraphConnectivity_SDK/include/GraphConnectivity.h
+/GraphConnectivity_SDK/README.md
