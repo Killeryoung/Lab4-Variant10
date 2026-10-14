@@ -1,0 +1,25 @@
+# GraphPaths SDK — контракт API 1.0 (Студент А, варіант 10)
+
+Бібліотека для найкоротших шляхів в **орієнтованому зваженому графі**. Вершини нумеруються від `0` до `n-1`. Граф задається квадратною матрицею `int matrix[n*n]` у порядку рядків. `-1` — ребра немає; `0` і додатні числа — дозволені ваги. Від'ємні ваги менше `-1` недопустимі. Бібліотека не виділяє пам'ять для користувача; усі вихідні буфери надає та звільняє клієнт. Експорт функцій: C ABI (`extern "C"`).
+
+## Функції
+
+- `int dijkstra(const int* matrix, int n, int source, long long* dist, int* parent)` — записує відстані й попередників у масиви довжини `n`. Недосяжні вершини: `dist=-1`, `parent=-1`; для джерела `parent=-1`. Повертає `1` за успіху, `0` за некоректних параметрів.
+- `int reconstructPath(const int* parent, int n, int source, int target, int* path, int capacity)` — відновлює шлях за масивом попередників, записує вершини в `path`; `capacity >= n`. Повертає кількість вершин, `0` якщо шляху немає, `-1` за помилки (зокрема цикл у parent).
+- `int shortestPath(const int* matrix, int n, int source, int target, int* path, int capacity)` — виконує Дейкстру і відновлює шлях. Повертає кількість вершин, `0` якщо недосяжно, `-1` за помилки.
+- `long long pathLength(const int* matrix, int n, const int* path, int count)` — сума ваг послідовних ребер. Повертає `-1` за некоректних аргументів або відсутнього ребра. Для шляху з однієї вершини повертає `0`.
+
+## Граничні умови
+
+`nullptr`, `n<=0`, некоректні індекси, недостатній `capacity` відхиляються. `dijkstra` відхиляє ваги `< -1`. Переповнення сум відстаней не допускається. Граф може бути незв'язним. Для `pathLength` перевіряються вершини й ребра шляху; для коректності матриці в цілому використовуйте `dijkstra`.
+
+## Збирання (Windows / MinGW + CMake)
+
+```powershell
+cmake -S . -B build -G "MinGW Makefiles"
+cmake --build build
+.\build\StaticTest.exe
+.\build\ImplicitSelfTest.exe
+```
+
+SDK для партнера: `SDK/include/GraphPaths.h`, `SDK/lib/libGraphPaths.dll.a` (MinGW import library; для MSVC це `.lib`), `SDK/bin/libGraphPaths.dll`, `SDK/README.md`. Бібліотеку збирати тим самим toolchain/архітектурою, що й клієнт. DLL має бути доступна під час запуску.
